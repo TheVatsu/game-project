@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,4 @@ import { Socket } from 'ngx-socket-io';
 })
 export class AppComponent {
 
-  constructor(private socket: Socket){
-  }
 }
