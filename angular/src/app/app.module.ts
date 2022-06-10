@@ -6,18 +6,26 @@ import { routes } from './route';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { GameComponent } from './game/game.component';
 
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    CommonModule  
   ],
   providers: [SocketService],
   bootstrap: [AppComponent]
