@@ -10,6 +10,4 @@ export class AppComponent {
 
   constructor(private socket: Socket){
   }
-
-  title = 'angular';
 }

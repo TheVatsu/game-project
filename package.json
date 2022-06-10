@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "set DEBUG= SERVER,SOCKET & npm run build --watch --prefix ./angular & npm start",
+    "server": "set DEBUG= SERVER,SOCKET,GAME-SERVER & npm run build --watch --prefix ./angular & npm start",
     "build": "ng build",
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
