@@ -8,7 +8,7 @@ export class GameActivator implements CanActivate{
     constructor(private router:Router,private game:GameService){}
 
     canActivate(): boolean  {
-        const res = this.game.getUser != null
+        const res = this.game.getUser() != null
         if(!res){
             this.router.navigate(['/error'])
         }
