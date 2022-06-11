@@ -10,6 +10,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
+import { ErrorComponent } from './error/error.component';
+import { GameService } from './game/game.service';
+import { GameActivator } from './game/game.activator';
 
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
@@ -18,7 +21,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
   declarations: [
     AppComponent,
     HomeComponent,
-    GameComponent
+    GameComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     SocketIoModule.forRoot(config),
     CommonModule  
   ],
-  providers: [SocketService],
+  providers: [SocketService,GameService,GameActivator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
