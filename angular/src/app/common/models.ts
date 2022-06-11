@@ -4,3 +4,9 @@ export interface User{
     y : number
     hp : number
 }
+
+export interface Game{
+    width:number,
+    heigth:number,
+    players: Array<User>
+}

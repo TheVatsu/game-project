@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { map, Observable, of } from 'rxjs';
+import { Game } from '../common/models';
 import { GameService } from '../game/game.service';
 
 @Injectable()
@@ -16,9 +17,16 @@ export class SocketService {
     obs.subscribe(res =>{
       if(res == 200){
         this.game.setUser(name)
+        this.getInfo()
       }
     })
     return obs
+  }
+
+  getInfo(){
+    this.socket.emit('getInfo')
+    const obs = this.socket.fromEvent('getInfo').pipe(map((data):Game => <Game>data))
+    obs.subscribe(res =>{ this.game.setGame(res)})
   }
 
 }

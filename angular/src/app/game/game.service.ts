@@ -1,13 +1,19 @@
 import { Injectable } from "@angular/core";
-import { User } from "../common/models";
+import { Game, User } from "../common/models";
 
 
 @Injectable()
 export class GameService{
     currentUser : User
+    game : Game
 
     constructor(){
         this.currentUser = null
+        this.game = null
+    }
+
+    setGame(game:Game){
+        this.game = game
     }
 
     setUser(player_name:String):void{

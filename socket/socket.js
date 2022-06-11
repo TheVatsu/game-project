@@ -13,6 +13,9 @@ module.exports = function(server){
             gameServer.newPlayer(name)
             client.emit('newPlayer',200)
         })
+        client.on('getInfo',()=>{
+            client.emit('getInfo',gameServer.getInfo())
+        })
         client.on('disconnect',()=>{ debug(chalk.red(`Client disconnected`))})
     })
 }
