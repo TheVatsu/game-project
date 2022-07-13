@@ -28,5 +28,8 @@ export class GameService{
     getUser():User{
         return this.currentUser
     }
+    getGame():Game{
+        return this.game
+    }
 
 }

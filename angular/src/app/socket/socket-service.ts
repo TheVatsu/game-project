@@ -7,7 +7,6 @@ import { GameService } from '../game/game.service';
 @Injectable()
 export class SocketService {
 
-
   constructor(private socket: Socket,private game:GameService) {
   }
 

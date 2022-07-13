@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { Game, User } from '../common/models';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-game',
@@ -8,7 +9,13 @@ import { Socket } from 'ngx-socket-io';
 })
 export class GameComponent implements OnInit {
 
-  constructor(private socket:Socket) { }
+  user : User
+  game : Game
+
+  constructor(private gameService:GameService) {
+      this.user = this.gameService.getUser()
+      this.game = this.gameService.getGame()
+   }
 
   ngOnInit(): void {
   }
